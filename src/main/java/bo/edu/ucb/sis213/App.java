@@ -139,16 +139,24 @@ public class App {
     public static void realizarRetiro() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese la cantidad a retirar: $");
-        double cantidad = scanner.nextDouble();
+        try{
+            double cantidad = scanner.nextDouble();
+            if (cantidad <= 0) {
+                System.out.println("No tiene la cantidad requeridad para realizar el retiro /n/t GRACIAS");                
+            } else {
+                //String ActualizarRetiro = "UPDATE usuarios SET saldo = saldo" 
+            }
+        } catch (SQLException e){}
+        
 
-        if (cantidad <= 0) {
-            System.out.println("Cantidad no válida.");
-        } else if (cantidad > saldo) {
-            System.out.println("Saldo insuficiente.");
-        } else {
-            saldo -= cantidad;
-            System.out.println("Retiro realizado con éxito. Su nuevo saldo es: $" + saldo);
-        }
+        // if (cantidad <= 0) {
+        //     System.out.println("Cantidad no válida.");
+        // } else if (cantidad > saldo) {
+        //     System.out.println("Saldo insuficiente.");
+        // } else {
+        //     saldo -= cantidad;
+        //     System.out.println("Retiro realizado con éxito. Su nuevo saldo es: $" + saldo);
+        // }
     }
 
     public static void cambiarPIN() {
